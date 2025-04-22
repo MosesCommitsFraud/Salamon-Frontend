@@ -77,8 +77,9 @@ export default function CardListPage() {
   }, [allCards, searchQuery]);
 
   // Filter and sort cards based on search and active filters
+  // FIXED: Removed currentPage from dependencies to avoid circular updates
   const filteredCards = useMemo(() => {
-    const filtered = searchedCards.filter((card) => {
+    return searchedCards.filter((card) => {
       // Type filter
       if (activeFilters.types.length > 0 && !activeFilters.types.includes(card.type))
         return false;
@@ -118,12 +119,13 @@ export default function CardListPage() {
           return 0;
       }
     });
-    // Reset to page 1 when filters change
-    if (currentPage !== 1) {
-      setCurrentPage(1);
-    }
-    return filtered;
-  }, [searchedCards, activeFilters, sortBy, currentPage]);
+  }, [searchedCards, activeFilters, sortBy]); // Removed currentPage from dependencies
+
+  // ADDED: Separate effect to handle page resets when filters or search change
+  useEffect(() => {
+    // Reset to page 1 when search or filters change
+    setCurrentPage(1);
+  }, [searchQuery, activeFilters, sortBy]);
 
   // Calculate pagination
   const totalPages = Math.ceil(filteredCards.length / pageSize);
@@ -397,8 +399,8 @@ export default function CardListPage() {
                     Previous
                   </Button>
                   <span className="text-blue-300 text-sm">
-                Page {currentPage} of {totalPages}
-              </span>
+                    Page {currentPage} of {totalPages}
+                  </span>
                   <Button
                       variant="outline"
                       size="sm"
