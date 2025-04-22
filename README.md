@@ -38,7 +38,7 @@ cd salamon
 
 # 2. Installation von npm und Node.Js via vscode Extensions oder per manueller Installation
 
-# 3. Env‑Datei einfügen ins Root-Verzeichnis
+# 3. .env.local einfügen ins Root-Verzeichnis
 
 # 4. Abhängigkeiten installieren (React 19 erfordert --force)
 npm install --force
