@@ -13,8 +13,7 @@ export async function POST(request: NextRequest) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
-      // Add a timeout to prevent hanging requests
-      signal: AbortSignal.timeout(60000), // 60-second timeout
+      // Removed timeout to allow requests to run indefinitely
     });
 
     if (!response.ok) {
@@ -30,13 +29,13 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("Error in generate-deck API route:", error);
     return NextResponse.json(
-      {
-        error:
-          error instanceof Error
-            ? error.message
-            : "Failed to generate deck recommendations",
-      },
-      { status: 500 },
+        {
+          error:
+              error instanceof Error
+                  ? error.message
+                  : "Failed to generate deck recommendations",
+        },
+        { status: 500 },
     );
   }
 }

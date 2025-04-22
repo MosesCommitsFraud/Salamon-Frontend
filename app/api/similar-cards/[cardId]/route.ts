@@ -20,8 +20,7 @@ export async function GET(
             headers: {
                 "Content-Type": "application/json",
             },
-            // Add a timeout to prevent hanging requests
-            signal: AbortSignal.timeout(30000), // 30-second timeout
+            // Removed timeout to allow requests to run indefinitely
         });
 
         // Log response status to help debug
