@@ -24,8 +24,8 @@ function PureSuggestedActions({ chatId, append }: SuggestedActionsProps) {
     },
     {
       title: 'Rules for',
-      label: 'Pendulum Summoning?',
-      action: 'What are the rules for Pendulum Summoning?',
+      label: 'Yu-Gi-Oh! Ruleset?',
+      action: 'What are the rules for Yu-Gi-Oh?',
     },
     {
       title: 'Show an example of',
