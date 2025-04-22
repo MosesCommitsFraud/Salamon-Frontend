@@ -1,0 +1,937 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ygo: <http://example.org/ygo#> .
+
+ygo:Deck_Deck123 a ygo:Deck ;
+    ygo:cardName "Deck123"^^xsd:string ;
+    ygo:hasCardSlot ygo:Deck_Deck123_Slot_extra_11321089,
+        ygo:Deck_Deck123_Slot_extra_11443677,
+        ygo:Deck_Deck123_Slot_extra_2129638,
+        ygo:Deck_Deck123_Slot_extra_27548199,
+        ygo:Deck_Deck123_Slot_extra_37818794,
+        ygo:Deck_Deck123_Slot_extra_44097050,
+        ygo:Deck_Deck123_Slot_extra_44146295,
+        ygo:Deck_Deck123_Slot_extra_50588353,
+        ygo:Deck_Deck123_Slot_extra_59822133,
+        ygo:Deck_Deck123_Slot_extra_70534340,
+        ygo:Deck_Deck123_Slot_extra_84815190,
+        ygo:Deck_Deck123_Slot_extra_87746184,
+        ygo:Deck_Deck123_Slot_extra_94977269,
+        ygo:Deck_Deck123_Slot_main_10045474,
+        ygo:Deck_Deck123_Slot_main_11321089,
+        ygo:Deck_Deck123_Slot_main_14558127,
+        ygo:Deck_Deck123_Slot_main_23995346,
+        ygo:Deck_Deck123_Slot_main_24094653,
+        ygo:Deck_Deck123_Slot_main_24224830,
+        ygo:Deck_Deck123_Slot_main_27548199,
+        ygo:Deck_Deck123_Slot_main_30576089,
+        ygo:Deck_Deck123_Slot_main_36637374,
+        ygo:Deck_Deck123_Slot_main_3717252,
+        ygo:Deck_Deck123_Slot_main_38517737,
+        ygo:Deck_Deck123_Slot_main_44146295,
+        ygo:Deck_Deck123_Slot_main_44362883,
+        ygo:Deck_Deck123_Slot_main_46986414,
+        ygo:Deck_Deck123_Slot_main_50588353,
+        ygo:Deck_Deck123_Slot_main_53493204,
+        ygo:Deck_Deck123_Slot_main_59822133,
+        ygo:Deck_Deck123_Slot_main_62089826,
+        ygo:Deck_Deck123_Slot_main_62962630,
+        ygo:Deck_Deck123_Slot_main_66961194,
+        ygo:Deck_Deck123_Slot_main_6763530,
+        ygo:Deck_Deck123_Slot_main_67922702,
+        ygo:Deck_Deck123_Slot_main_68468459,
+        ygo:Deck_Deck123_Slot_main_70534340,
+        ygo:Deck_Deck123_Slot_main_71039903,
+        ygo:Deck_Deck123_Slot_main_71143015,
+        ygo:Deck_Deck123_Slot_main_74677422,
+        ygo:Deck_Deck123_Slot_main_8240199,
+        ygo:Deck_Deck123_Slot_main_84815190,
+        ygo:Deck_Deck123_Slot_main_87746184,
+        ygo:Deck_Deck123_Slot_main_89631139,
+        ygo:Deck_Deck123_Slot_main_904186,
+        ygo:Deck_Deck123_Slot_main_94693857 .
+
+ygo:Deck_Deck123_Ontology a owl:Ontology ;
+    owl:imports <file:///C%3A/Users/danth/PycharmProjects/YGODeckBuilder-Backend/ML-arch/Emedding/graph/ygo_ontology_base.ttl> .
+
+ygo:archetype a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:atk a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:integer .
+
+ygo:banGoat a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:banOcg a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:banTcg a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:cardAttribute a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:cardDesc a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:cardName a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:cardType a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:count a owl:DatatypeProperty ;
+    rdfs:label "number of copies of that Card in this Slot"^^xsd:string ;
+    rdfs:domain ygo:CardSlot ;
+    rdfs:range xsd:integer .
+
+ygo:defense a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:integer .
+
+ygo:effect_banish a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_change_position a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_copy a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_counter a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_deck_manipulation a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_destroy a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_discard a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_draw a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_equip a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_inflict_damage a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_modify_stats a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_negate a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_protect a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_recover_lp a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_return a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_search a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_send_gy a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_shuffle a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_special_summon a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_token_summon a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:forCard a owl:ObjectProperty ;
+    rdfs:label "links a CardSlot to the Card it represents"^^xsd:string ;
+    rdfs:domain ygo:CardSlot ;
+    rdfs:range ygo:Card .
+
+ygo:frameType a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:humanReadableCardType a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:isStaple a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:level a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:integer .
+
+ygo:race a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:section a owl:DatatypeProperty ;
+    rdfs:label "which section of the Deck (main, extra, side) the slot is in"^^xsd:string ;
+    rdfs:domain ygo:CardSlot ;
+    rdfs:range xsd:string .
+
+ygo:ygoprodeckURL a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:anyURI .
+
+ygo:Card_10045474 a ygo:Card ;
+    ygo:cardName "Infinite Impermanence"^^xsd:string ;
+    ygo:effect_effect_negate true ;
+    ygo:referencedArchetypes "[]"^^xsd:string ;
+    ygo:referencedRaces "[]"^^xsd:string ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/10045474.jpg"^^xsd:anyURI .
+
+ygo:Card_11443677 a ygo:Card ;
+    ygo:atk 3400 ;
+    ygo:cardAttribute "LIGHT"^^xsd:string ;
+    ygo:cardName "Blue-Eyes Tyrant Dragon"^^xsd:string ;
+    ygo:defense 2900 ;
+    ygo:effect_effect_equip true ;
+    ygo:effect_effect_protect true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:level 8 ;
+    ygo:referencedArchetypes "[\"White\", \"Fusion\", \"Blue-Eyes\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Dragon\"]"^^xsd:string ;
+    ygo:refersTo ygo:Card_89631139 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/11443677.jpg"^^xsd:anyURI .
+
+ygo:Card_2129638 a ygo:Card ;
+    ygo:atk 3000 ;
+    ygo:cardAttribute "LIGHT"^^xsd:string ;
+    ygo:cardName "Blue-Eyes Twin Burst Dragon"^^xsd:string ;
+    ygo:defense 2500 ;
+    ygo:effect_effect_banish true ;
+    ygo:effect_effect_destroy true ;
+    ygo:effect_effect_protect true ;
+    ygo:effect_effect_send_gy true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:level 10 ;
+    ygo:referencedArchetypes "[\"Blue-Eyes\", \"White\", \"Fusion\", \"Polymerization\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Dragon\"]"^^xsd:string ;
+    ygo:refersTo ygo:Card_24094653,
+        ygo:Card_89631139 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/2129638.jpg"^^xsd:anyURI .
+
+ygo:Card_24224830 a ygo:Card ;
+    ygo:banOcg "Semi-Limited"^^xsd:string ;
+    ygo:banTcg "Limited"^^xsd:string ;
+    ygo:cardName "Called by the Grave"^^xsd:string ;
+    ygo:effect_effect_banish true ;
+    ygo:effect_effect_negate true ;
+    ygo:referencedArchetypes "[]"^^xsd:string ;
+    ygo:referencedRaces "[]"^^xsd:string ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/24224830.jpg"^^xsd:anyURI .
+
+ygo:Card_37818794 a ygo:Card ;
+    ygo:atk 3000 ;
+    ygo:cardAttribute "DARK"^^xsd:string ;
+    ygo:cardName "Red-Eyes Dark Dragoon"^^xsd:string ;
+    ygo:defense 2500 ;
+    ygo:effect_effect_destroy true ;
+    ygo:effect_effect_discard true ;
+    ygo:effect_effect_inflict_damage true ;
+    ygo:effect_effect_modify_stats true ;
+    ygo:effect_effect_negate true ;
+    ygo:effect_effect_protect true ;
+    ygo:level 8 ;
+    ygo:referencedArchetypes "[\"Fusion\", \"Dark Magician\", \"Red-Eyes\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Dragon\", \"Normal\"]"^^xsd:string ;
+    ygo:refersTo ygo:Card_46986414,
+        ygo:Card_74677422 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/37818794.jpg"^^xsd:anyURI .
+
+ygo:Card_44097050 a ygo:Card ;
+    ygo:atk 2100 ;
+    ygo:banTcg "Forbidden"^^xsd:string ;
+    ygo:cardAttribute "WIND"^^xsd:string ;
+    ygo:cardName "Mecha Phantom Beast Auroradon"^^xsd:string ;
+    ygo:effect_effect_destroy true ;
+    ygo:effect_effect_modify_stats true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:effect_effect_token_summon true ;
+    ygo:referencedArchetypes "[\"Mecha Phantom Beast\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Machine\", \"Beast\"]"^^xsd:string ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/44097050.jpg"^^xsd:anyURI .
+
+ygo:Card_53493204 a ygo:Card ;
+    ygo:atk 1200 ;
+    ygo:cardAttribute "LIGHT"^^xsd:string ;
+    ygo:cardName "Goddess with the Third Eye"^^xsd:string ;
+    ygo:defense 1000 ;
+    ygo:level 4 ;
+    ygo:referencedArchetypes "[\"Fusion\"]"^^xsd:string ;
+    ygo:referencedRaces "[]"^^xsd:string ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/53493204.jpg"^^xsd:anyURI .
+
+ygo:Card_67922702 a ygo:Card ;
+    ygo:atk 1700 ;
+    ygo:cardAttribute "WIND"^^xsd:string ;
+    ygo:cardName "Mecha Phantom Beast Tetherwolf"^^xsd:string ;
+    ygo:defense 1200 ;
+    ygo:effect_effect_destroy true ;
+    ygo:effect_effect_modify_stats true ;
+    ygo:effect_effect_protect true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:effect_effect_token_summon true ;
+    ygo:level 4 ;
+    ygo:referencedArchetypes "[\"Mecha Phantom Beast\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Machine\", \"Beast\", \"Normal\"]"^^xsd:string ;
+    ygo:refersTo ygo:Card_904186 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/67922702.jpg"^^xsd:anyURI .
+
+ygo:Card_94693857 a ygo:Card ;
+    ygo:atk 500 ;
+    ygo:cardAttribute "EARTH"^^xsd:string ;
+    ygo:cardName "Deskbot 001"^^xsd:string ;
+    ygo:defense 500 ;
+    ygo:effect_effect_modify_stats true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:level 1 ;
+    ygo:referencedArchetypes "[]"^^xsd:string ;
+    ygo:referencedRaces "[\"Machine\"]"^^xsd:string ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/94693857.jpg"^^xsd:anyURI .
+
+ygo:Card_94977269 a ygo:Card ;
+    ygo:atk 2200 ;
+    ygo:cardAttribute "DARK"^^xsd:string ;
+    ygo:cardName "El Shaddoll Winda"^^xsd:string ;
+    ygo:defense 800 ;
+    ygo:effect_effect_destroy true ;
+    ygo:effect_effect_protect true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:level 5 ;
+    ygo:referencedArchetypes "[\"Shaddoll\", \"Fusion\"]"^^xsd:string ;
+    ygo:referencedRaces "[]"^^xsd:string ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/94977269.jpg"^^xsd:anyURI .
+
+ygo:Deck_Deck123_Slot_extra_11321089 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_11321089 ;
+    ygo:section "extra"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_extra_11443677 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_11443677 ;
+    ygo:section "extra"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_extra_2129638 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_2129638 ;
+    ygo:section "extra"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_extra_27548199 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_27548199 ;
+    ygo:section "extra"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_extra_37818794 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_37818794 ;
+    ygo:section "extra"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_extra_44097050 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_44097050 ;
+    ygo:section "extra"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_extra_44146295 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_44146295 ;
+    ygo:section "extra"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_extra_50588353 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_50588353 ;
+    ygo:section "extra"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_extra_59822133 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_59822133 ;
+    ygo:section "extra"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_extra_70534340 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_70534340 ;
+    ygo:section "extra"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_extra_84815190 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_84815190 ;
+    ygo:section "extra"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_extra_87746184 a ygo:CardSlot ;
+    ygo:count 2 ;
+    ygo:forCard ygo:Card_87746184 ;
+    ygo:section "extra"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_extra_94977269 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_94977269 ;
+    ygo:section "extra"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_10045474 a ygo:CardSlot ;
+    ygo:count 3 ;
+    ygo:forCard ygo:Card_10045474 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_11321089 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_11321089 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_14558127 a ygo:CardSlot ;
+    ygo:count 3 ;
+    ygo:forCard ygo:Card_14558127 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_23995346 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_23995346 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_24094653 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_24094653 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_24224830 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_24224830 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_27548199 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_27548199 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_30576089 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_30576089 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_36637374 a ygo:CardSlot ;
+    ygo:count 3 ;
+    ygo:forCard ygo:Card_36637374 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_3717252 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_3717252 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_38517737 a ygo:CardSlot ;
+    ygo:count 2 ;
+    ygo:forCard ygo:Card_38517737 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_44146295 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_44146295 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_44362883 a ygo:CardSlot ;
+    ygo:count 3 ;
+    ygo:forCard ygo:Card_44362883 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_46986414 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_46986414 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_50588353 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_50588353 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_53493204 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_53493204 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_59822133 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_59822133 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_62089826 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_62089826 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_62962630 a ygo:CardSlot ;
+    ygo:count 3 ;
+    ygo:forCard ygo:Card_62962630 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_66961194 a ygo:CardSlot ;
+    ygo:count 3 ;
+    ygo:forCard ygo:Card_66961194 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_6763530 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_6763530 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_67922702 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_67922702 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_68468459 a ygo:CardSlot ;
+    ygo:count 2 ;
+    ygo:forCard ygo:Card_68468459 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_70534340 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_70534340 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_71039903 a ygo:CardSlot ;
+    ygo:count 3 ;
+    ygo:forCard ygo:Card_71039903 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_71143015 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_71143015 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_74677422 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_74677422 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_8240199 a ygo:CardSlot ;
+    ygo:count 3 ;
+    ygo:forCard ygo:Card_8240199 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_84815190 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_84815190 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_87746184 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_87746184 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_89631139 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_89631139 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_904186 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_904186 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Deck_Deck123_Slot_main_94693857 a ygo:CardSlot ;
+    ygo:count 1 ;
+    ygo:forCard ygo:Card_94693857 ;
+    ygo:section "main"^^xsd:string .
+
+ygo:Card_14558127 a ygo:Card ;
+    ygo:atk 0 ;
+    ygo:cardAttribute "FIRE"^^xsd:string ;
+    ygo:cardName "Ash Blossom & Joyous Spring"^^xsd:string ;
+    ygo:defense 1800 ;
+    ygo:effect_effect_discard true ;
+    ygo:effect_effect_negate true ;
+    ygo:effect_effect_send_gy true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:level 3 ;
+    ygo:referencedArchetypes "[]"^^xsd:string ;
+    ygo:referencedRaces "[]"^^xsd:string ;
+    ygo:refersTo ygo:Card_14558127 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/14558127.jpg"^^xsd:anyURI .
+
+ygo:Card_23995346 a ygo:Card ;
+    ygo:atk 4500 ;
+    ygo:cardAttribute "LIGHT"^^xsd:string ;
+    ygo:cardName "Blue-Eyes Ultimate Dragon"^^xsd:string ;
+    ygo:defense 3800 ;
+    ygo:level 12 ;
+    ygo:referencedArchetypes "[\"White\", \"Blue-Eyes\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Dragon\"]"^^xsd:string ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/23995346.jpg"^^xsd:anyURI .
+
+ygo:Card_30576089 a ygo:Card ;
+    ygo:atk 3000 ;
+    ygo:cardAttribute "LIGHT"^^xsd:string ;
+    ygo:cardName "Blue-Eyes Jet Dragon"^^xsd:string ;
+    ygo:defense 0 ;
+    ygo:effect_effect_destroy true ;
+    ygo:effect_effect_protect true ;
+    ygo:effect_effect_return true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:level 8 ;
+    ygo:referencedArchetypes "[\"White\", \"Blue-Eyes\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Dragon\"]"^^xsd:string ;
+    ygo:refersTo ygo:Card_30576089,
+        ygo:Card_89631139 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/30576089.jpg"^^xsd:anyURI .
+
+ygo:Card_36637374 a ygo:Card ;
+    ygo:banOcg "Semi-Limited"^^xsd:string ;
+    ygo:cardName "Branded Opening"^^xsd:string ;
+    ygo:effect_effect_banish true ;
+    ygo:effect_effect_destroy true ;
+    ygo:effect_effect_discard true ;
+    ygo:effect_effect_modify_stats true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:referencedArchetypes "[\"Fusion\", \"Despia\", \"Branded\"]"^^xsd:string ;
+    ygo:referencedRaces "[]"^^xsd:string ;
+    ygo:refersTo ygo:Card_36637374 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/36637374.jpg"^^xsd:anyURI .
+
+ygo:Card_3717252 a ygo:Card ;
+    ygo:atk 2200 ;
+    ygo:cardAttribute "DARK"^^xsd:string ;
+    ygo:cardName "Shaddoll Beast"^^xsd:string ;
+    ygo:defense 1700 ;
+    ygo:effect_effect_discard true ;
+    ygo:effect_effect_draw true ;
+    ygo:level 5 ;
+    ygo:referencedArchetypes "[\"Shaddoll\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Beast\"]"^^xsd:string ;
+    ygo:refersTo ygo:Card_3717252 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/3717252.jpg"^^xsd:anyURI .
+
+ygo:Card_38517737 a ygo:Card ;
+    ygo:atk 3000 ;
+    ygo:cardAttribute "LIGHT"^^xsd:string ;
+    ygo:cardName "Blue-Eyes Alternative White Dragon"^^xsd:string ;
+    ygo:defense 2500 ;
+    ygo:effect_effect_destroy true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:level 8 ;
+    ygo:referencedArchetypes "[\"White\", \"Blue-Eyes\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Dragon\", \"Normal\"]"^^xsd:string ;
+    ygo:refersTo ygo:Card_38517737,
+        ygo:Card_89631139 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/38517737.jpg"^^xsd:anyURI .
+
+ygo:Card_44362883 a ygo:Card ;
+    ygo:banOcg "Limited"^^xsd:string ;
+    ygo:banTcg "Limited"^^xsd:string ;
+    ygo:cardName "Branded Fusion"^^xsd:string ;
+    ygo:effect_effect_special_summon true ;
+    ygo:referencedArchetypes "[\"Fusion\", \"Branded\"]"^^xsd:string ;
+    ygo:referencedRaces "[]"^^xsd:string ;
+    ygo:refersTo ygo:Card_44362883,
+        ygo:Card_68468459 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/44362883.jpg"^^xsd:anyURI .
+
+ygo:Card_46986414 a ygo:Card ;
+    ygo:atk 2500 ;
+    ygo:cardAttribute "DARK"^^xsd:string ;
+    ygo:cardName "Dark Magician"^^xsd:string ;
+    ygo:defense 2100 ;
+    ygo:effect_effect_modify_stats true ;
+    ygo:level 7 ;
+    ygo:referencedArchetypes "[]"^^xsd:string ;
+    ygo:referencedRaces "[]"^^xsd:string ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/46986414.jpg"^^xsd:anyURI .
+
+ygo:Card_62089826 a ygo:Card ;
+    ygo:cardName "True Light"^^xsd:string ;
+    ygo:effect_effect_destroy true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:referencedArchetypes "[\"White\", \"Blue-Eyes\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Dragon\"]"^^xsd:string ;
+    ygo:refersTo ygo:Card_62089826,
+        ygo:Card_89631139 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/62089826.jpg"^^xsd:anyURI .
+
+ygo:Card_62962630 a ygo:Card ;
+    ygo:atk 1800 ;
+    ygo:cardAttribute "DARK"^^xsd:string ;
+    ygo:cardName "Aluber the Jester of Despia"^^xsd:string ;
+    ygo:defense 0 ;
+    ygo:effect_effect_destroy true ;
+    ygo:effect_effect_negate true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:level 4 ;
+    ygo:referencedArchetypes "[\"Jester\", \"Fusion\", \"Despia\", \"Branded\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Normal\"]"^^xsd:string ;
+    ygo:refersTo ygo:Card_62962630 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/62962630.jpg"^^xsd:anyURI .
+
+ygo:Card_66961194 a ygo:Card ;
+    ygo:atk 1200 ;
+    ygo:cardAttribute "DARK"^^xsd:string ;
+    ygo:cardName "Dictator of D."^^xsd:string ;
+    ygo:defense 1100 ;
+    ygo:effect_effect_discard true ;
+    ygo:effect_effect_send_gy true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:level 4 ;
+    ygo:referencedArchetypes "[\"White\", \"Blue-Eyes\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Dragon\"]"^^xsd:string ;
+    ygo:refersTo ygo:Card_66961194,
+        ygo:Card_89631139 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/66961194.jpg"^^xsd:anyURI .
+
+ygo:Card_6763530 a ygo:Card ;
+    ygo:cardName "Branded Banishment"^^xsd:string ;
+    ygo:effect_effect_banish true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:referencedArchetypes "[\"Fusion\", \"Despia\", \"Branded\"]"^^xsd:string ;
+    ygo:referencedRaces "[]"^^xsd:string ;
+    ygo:refersTo ygo:Card_6763530 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/6763530.jpg"^^xsd:anyURI .
+
+ygo:Card_71039903 a ygo:Card ;
+    ygo:atk 600 ;
+    ygo:cardAttribute "LIGHT"^^xsd:string ;
+    ygo:cardName "The White Stone of Ancients"^^xsd:string ;
+    ygo:defense 500 ;
+    ygo:effect_effect_banish true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:level 1 ;
+    ygo:referencedArchetypes "[\"White\", \"Blue-Eyes\"]"^^xsd:string ;
+    ygo:referencedRaces "[]"^^xsd:string ;
+    ygo:refersTo ygo:Card_71039903 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/71039903.jpg"^^xsd:anyURI .
+
+ygo:Card_71143015 a ygo:Card ;
+    ygo:cardName "Ultimate Fusion"^^xsd:string ;
+    ygo:effect_effect_destroy true ;
+    ygo:referencedArchetypes "[\"White\", \"Fusion\", \"Blue-Eyes\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Dragon\"]"^^xsd:string ;
+    ygo:refersTo ygo:Card_23995346,
+        ygo:Card_71143015,
+        ygo:Card_89631139 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/71143015.jpg"^^xsd:anyURI .
+
+ygo:Card_74677422 a ygo:Card ;
+    ygo:atk 2400 ;
+    ygo:cardAttribute "DARK"^^xsd:string ;
+    ygo:cardName "Red-Eyes Black Dragon"^^xsd:string ;
+    ygo:defense 2000 ;
+    ygo:level 7 ;
+    ygo:referencedArchetypes "[]"^^xsd:string ;
+    ygo:referencedRaces "[]"^^xsd:string ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/74677422.jpg"^^xsd:anyURI .
+
+ygo:Card_8240199 a ygo:Card ;
+    ygo:atk 0 ;
+    ygo:cardAttribute "LIGHT"^^xsd:string ;
+    ygo:cardName "Sage with Eyes of Blue"^^xsd:string ;
+    ygo:defense 1500 ;
+    ygo:effect_effect_discard true ;
+    ygo:effect_effect_send_gy true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:level 1 ;
+    ygo:referencedArchetypes "[\"with Eyes of Blue\", \"Blue-Eyes\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Normal\"]"^^xsd:string ;
+    ygo:refersTo ygo:Card_8240199 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/8240199.jpg"^^xsd:anyURI .
+
+ygo:Card_904186 a ygo:Card ;
+    ygo:cardName "Mecha Phantom Beast Token"^^xsd:string ;
+    ygo:effect_effect_modify_stats true ;
+    ygo:effect_effect_token_summon true ;
+    ygo:referencedArchetypes "[\"Mecha Phantom Beast\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Beast\"]"^^xsd:string ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/904186.jpg"^^xsd:anyURI .
+
+ygo:Card_11321089 a ygo:Card ;
+    ygo:atk 3300 ;
+    ygo:cardAttribute "DARK"^^xsd:string ;
+    ygo:cardName "Guardian Chimera"^^xsd:string ;
+    ygo:defense 3300 ;
+    ygo:effect_effect_destroy true ;
+    ygo:effect_effect_draw true ;
+    ygo:level 9 ;
+    ygo:referencedArchetypes "[\"Chimera\", \"Guardian\", \"Fusion\", \"Polymerization\"]"^^xsd:string ;
+    ygo:referencedRaces "[]"^^xsd:string ;
+    ygo:refersTo ygo:Card_11321089,
+        ygo:Card_24094653 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/11321089.jpg"^^xsd:anyURI .
+
+ygo:Card_24094653 a ygo:Card ;
+    ygo:cardName "Polymerization"^^xsd:string ;
+    ygo:referencedArchetypes "[\"Fusion\"]"^^xsd:string ;
+    ygo:referencedRaces "[]"^^xsd:string ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/24094653.jpg"^^xsd:anyURI .
+
+ygo:Card_27548199 a ygo:Card ;
+    ygo:atk 3000 ;
+    ygo:banTcg "Forbidden"^^xsd:string ;
+    ygo:cardAttribute "DARK"^^xsd:string ;
+    ygo:cardName "Borreload Savage Dragon"^^xsd:string ;
+    ygo:defense 2500 ;
+    ygo:effect_effect_counter true ;
+    ygo:effect_effect_equip true ;
+    ygo:effect_effect_modify_stats true ;
+    ygo:effect_effect_negate true ;
+    ygo:level 8 ;
+    ygo:referencedArchetypes "[\"Synchro\", \"Borrel\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Dragon\", \"Counter\"]"^^xsd:string ;
+    ygo:refersTo ygo:Card_27548199 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/27548199.jpg"^^xsd:anyURI .
+
+ygo:Card_44146295 a ygo:Card ;
+    ygo:atk 3000 ;
+    ygo:cardAttribute "DARK"^^xsd:string ;
+    ygo:cardName "Mirrorjade the Iceblade Dragon"^^xsd:string ;
+    ygo:defense 2500 ;
+    ygo:effect_effect_banish true ;
+    ygo:effect_effect_destroy true ;
+    ygo:effect_effect_send_gy true ;
+    ygo:level 8 ;
+    ygo:referencedArchetypes "[\"Fusion\", \"Synchro\", \"Xyz\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Dragon\"]"^^xsd:string ;
+    ygo:refersTo ygo:Card_44146295,
+        ygo:Card_68468459 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/44146295.jpg"^^xsd:anyURI .
+
+ygo:Card_50588353 a ygo:Card ;
+    ygo:atk 1500 ;
+    ygo:banOcg "Forbidden"^^xsd:string ;
+    ygo:banTcg "Forbidden"^^xsd:string ;
+    ygo:cardAttribute "WATER"^^xsd:string ;
+    ygo:cardName "Crystron Halqifibrax"^^xsd:string ;
+    ygo:effect_effect_banish true ;
+    ygo:effect_effect_modify_stats true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:level 0 ;
+    ygo:referencedArchetypes "[\"Synchro\", \"Crystron\"]"^^xsd:string ;
+    ygo:referencedRaces "[]"^^xsd:string ;
+    ygo:refersTo ygo:Card_50588353 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/50588353.jpg"^^xsd:anyURI .
+
+ygo:Card_59822133 a ygo:Card ;
+    ygo:atk 2500 ;
+    ygo:cardAttribute "LIGHT"^^xsd:string ;
+    ygo:cardName "Blue-Eyes Spirit Dragon"^^xsd:string ;
+    ygo:defense 3000 ;
+    ygo:effect_effect_destroy true ;
+    ygo:effect_effect_modify_stats true ;
+    ygo:effect_effect_negate true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:level 9 ;
+    ygo:referencedArchetypes "[\"Synchro\", \"Blue-Eyes\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Dragon\"]"^^xsd:string ;
+    ygo:refersTo ygo:Card_59822133 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/59822133.jpg"^^xsd:anyURI .
+
+ygo:Card_70534340 a ygo:Card ;
+    ygo:atk 2500 ;
+    ygo:cardAttribute "LIGHT"^^xsd:string ;
+    ygo:cardName "Lubellion the Searing Dragon"^^xsd:string ;
+    ygo:defense 3000 ;
+    ygo:effect_effect_banish true ;
+    ygo:effect_effect_discard true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:level 8 ;
+    ygo:referencedArchetypes "[\"Fusion\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Dragon\"]"^^xsd:string ;
+    ygo:refersTo ygo:Card_68468459,
+        ygo:Card_70534340 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/70534340.jpg"^^xsd:anyURI .
+
+ygo:Card_84815190 a ygo:Card ;
+    ygo:atk 3000 ;
+    ygo:banTcg "Forbidden"^^xsd:string ;
+    ygo:cardAttribute "WIND"^^xsd:string ;
+    ygo:cardName "Baronne de Fleur"^^xsd:string ;
+    ygo:defense 2400 ;
+    ygo:effect_effect_destroy true ;
+    ygo:effect_effect_negate true ;
+    ygo:effect_effect_return true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:level 10 ;
+    ygo:referencedArchetypes "[\"Fleur\"]"^^xsd:string ;
+    ygo:referencedRaces "[]"^^xsd:string ;
+    ygo:refersTo ygo:Card_84815190 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/84815190.jpg"^^xsd:anyURI .
+
+ygo:Card_87746184 a ygo:Card ;
+    ygo:atk 2500 ;
+    ygo:cardAttribute "DARK"^^xsd:string ;
+    ygo:cardName "Albion the Branded Dragon"^^xsd:string ;
+    ygo:defense 2000 ;
+    ygo:effect_effect_banish true ;
+    ygo:effect_effect_search true ;
+    ygo:level 8 ;
+    ygo:referencedArchetypes "[\"Fusion\", \"Branded\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Dragon\"]"^^xsd:string ;
+    ygo:refersTo ygo:Card_68468459,
+        ygo:Card_87746184 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/87746184.jpg"^^xsd:anyURI .
+
+ygo:Card_68468459 a ygo:Card ;
+    ygo:atk 1800 ;
+    ygo:cardAttribute "DARK"^^xsd:string ;
+    ygo:cardName "Fallen of Albaz"^^xsd:string ;
+    ygo:defense 0 ;
+    ygo:effect_effect_discard true ;
+    ygo:effect_effect_special_summon true ;
+    ygo:level 4 ;
+    ygo:referencedArchetypes "[\"Fusion\"]"^^xsd:string ;
+    ygo:referencedRaces "[\"Normal\"]"^^xsd:string ;
+    ygo:refersTo ygo:Card_68468459 ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/68468459.jpg"^^xsd:anyURI .
+
+ygo:Card_89631139 a ygo:Card ;
+    ygo:atk 3000 ;
+    ygo:cardAttribute "LIGHT"^^xsd:string ;
+    ygo:cardName "Blue-Eyes White Dragon"^^xsd:string ;
+    ygo:defense 2500 ;
+    ygo:level 8 ;
+    ygo:referencedArchetypes "[]"^^xsd:string ;
+    ygo:referencedRaces "[]"^^xsd:string ;
+    ygo:ygoprodeckURL "https://images.ygoprodeck.com/images/cards_small/89631139.jpg"^^xsd:anyURI .
+
+ygo:CardSlot a owl:Class ;
+    rdfs:label "A slot in a Deck referencing a certain Card with a count"^^xsd:string .
+
+ygo:Card a owl:Class ;
+    rdfs:label "A generic Yu-Gi-Oh! Card entity"^^xsd:string .
+

@@ -1,0 +1,182 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ygo: <http://example.org/ygo#> .
+
+ygo:archetype a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:atk a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:integer .
+
+ygo:banGoat a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:banOcg a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:banTcg a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:cardAttribute a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:cardDesc a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:cardName a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:cardType a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:defense a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:integer .
+
+ygo:effect_banish a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_change_position a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_copy a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_counter a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_deck_manipulation a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_destroy a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_discard a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_draw a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_equip a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_inflict_damage a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_modify_stats a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_negate a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_protect a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_recover_lp a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_return a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_search a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_send_gy a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_shuffle a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_special_summon a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:effect_token_summon a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:frameType a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:humanReadableCardType a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:isStaple a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:boolean .
+
+ygo:level a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:integer .
+
+ygo:race a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:string .
+
+ygo:ygoprodeckURL a owl:DatatypeProperty ;
+    rdfs:domain ygo:Card ;
+    rdfs:range xsd:anyURI .
+
+ygo:Card a owl:Class ;
+    rdfs:label "A generic Yu-Gi-Oh! Card entity"^^xsd:string .
+
+ ygo:CardSlot a owl:Class ;
+    rdfs:label "A slot in a Deck referencing a certain Card with a count"^^xsd:string .
+
+# Der Slot verweist auf genau eine Card:
+ygo:forCard a owl:ObjectProperty ;
+    rdfs:domain ygo:CardSlot ;
+    rdfs:range ygo:Card ;
+    rdfs:label "links a CardSlot to the Card it represents"^^xsd:string .
+
+# Wie viele Kopien hat man im Slot?
+ygo:count a owl:DatatypeProperty ;
+    rdfs:domain ygo:CardSlot ;
+    rdfs:range xsd:integer ;
+    rdfs:label "number of copies of that Card in this Slot"^^xsd:string .
+
+# Optional: Du könntest zusätzlich definieren, in welcher Section (main/extra/side) der Slot ist:
+ygo:section a owl:DatatypeProperty ;
+    rdfs:domain ygo:CardSlot ;
+    rdfs:range xsd:string ;
+    rdfs:label "which section of the Deck (main, extra, side) the slot is in"^^xsd:string .
+
+# Wenn du außerdem eine Deck-Klasse hättest, würdest du so das Property definieren:
+# ygo:Deck a owl:Class ;
+#     rdfs:label "Represents a Yu-Gi-Oh! Deck"^^xsd:string .
+#
+# ygo:hasCardSlot a owl:ObjectProperty ;
+#     rdfs:domain ygo:Deck ;
+#     rdfs:range ygo:CardSlot ;
+#     rdfs:label "a Deck has zero or more CardSlots"^^xsd:string .
+
