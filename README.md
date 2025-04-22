@@ -70,7 +70,7 @@ npm run dev
 
 > Nutze die mitgelieferte `.env`, passe aber **mindestens** die geheimen Schlüssel an.
 ---
-## Azure Setup
+# Azure Setup
 Unser aktueller Academic Azure Account läuft Ende Mai 2025 aus.
 Sollten Sie es bis dahin noch nicht geschafft haben sollten, ist im nachfolgenden beschrieben, wie Sie ihr Azure aufsetzen müssen um den Salamon Wizard zu verwenden.
 
