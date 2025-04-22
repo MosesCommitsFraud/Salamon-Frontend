@@ -80,39 +80,58 @@ MIT – siehe `LICENSE`. 
 Unser aktueller Academic Azure Account läuft Ende Mai 2025 aus.
 Sollten Sie es bis dahin noch nicht geschafft haben sollten, ist im nachfolgenden beschrieben, wie Sie ihr Azure aufsetzen müssen um den Salamon Wizard zu verwenden.
 
-1. Ressourcengruppe erstellen.
-2. Azure Storage Account anlegen.
-3. neue Container je für Karten und Rulebook anlegen.
-4. Karten und Rulebook in seperate Container hochladen
-    4.1 Link Karten: https://www.icloud.com/iclouddrive/0dfclQt8ABElDEG8QQTGk8FGg#pre-processed-ygo-cards 
-    4.2 Link Rulebook: https://www.yugioh-card.com/en/rulebook/
-5. Azure OpenAi anlegen.
-    5.1 Azure AI Foundry Portal öffnen
-    5.2 Bereitstellungen navigieren
-    5.3 Modell bereitstellen klicken (Basismodelle)
-    5.4 Filter auf Embedding Modelle setzen
-    5.5 "text-embedding-ada-002" auswählen und bestätigen
-6. Azure AI Search anlegen.
-    6.1 Tarif auswählen (unsere Empfehlung Basis Tier)
-    6.2 Innerhalb der AI Search
-        6.2.1 Importieren und Vektorisieren von Daten klicken.
-        6.2.2 Azure Blob Storage auswählen
-        6.2.3 Für YGO Karten
-            6.2.3.1 Entsprechenden Storage Account und Blob Container auswählen.
-            6.2.3.2 Analysemodus auf JSON setzen
-            6.2.3.3 Vektoriereirende Spalte "SearchableText" auswählen
-            6.2.3.4 (Wenn nicht schon ausgewählt, OpenAI Service auswählen [aus Schritt 5])
-            6.2.3.5 Modellimplementierung "text-embedding-ada-002" auswählen
-        6.2.4 Für YGO Karten
-            6.2.4.1 Entsprechenden Storage Account und Blob Container auswählen.
-            6.2.4.2 Analysemodus auf Default setzen
-            6.2.4.3 (Wenn nicht schon ausgewählt, OpenAI Service auswählen [aus Schritt 5])
-            6.2.4.4 Modellimplementierung "text-embedding-ada-002" auswählen
-7. Ai Search URL austauschen
-8. Ai Search Primary Key austauschen
-9. AI Search Index Bezeichnungen austauschen
-10. Azure OpenAI Endpoint austauschen
-11. Azure OpenAI Keys austauschen
+## 1. Ressourcengruppe erstellen
+- Neues Azure-Portal öffnen
+- Ressourcengruppe anlegen
+
+## 2. Azure Storage Account anlegen
+- Im Azure-Portal "Storage Account" erstellen
+- Konfigurationsdetails eingeben
+- Ressourcengruppe aus Schritt 1 auswählen
+
+## 3. Container erstellen
+- Im Storage Account zwei Container anlegen:
+  - Einer für Yu-Gi-Oh Karten
+  - Einer für das Regelwerk
+
+## 4. Daten hochladen
+- **4.1 Karten hochladen:**
+  - Link: [Pre-processed YGO Cards](https://www.icloud.com/iclouddrive/0dfclQt8ABElDEG8QQTGk8FGg#pre-processed-ygo-cards)
+  - Daten in den entsprechenden Container hochladen
+- **4.2 Regelwerk hochladen:**
+  - Link: [YGO Rulebook](https://www.yugioh-card.com/en/rulebook/)
+  - Regelwerk herunterladen und in den entsprechenden Container hochladen
+
+## 5. Azure OpenAI anlegen
+- **5.1** Azure AI Foundry Portal öffnen
+- **5.2** Zu "Bereitstellungen" navigieren
+- **5.3** "Modell bereitstellen" klicken (Basismodelle)
+- **5.4** Filter auf Embedding Modelle setzen
+- **5.5** "text-embedding-ada-002" auswählen und Bereitstellung bestätigen
+
+## 6. Azure AI Search anlegen
+- **6.1** AI Search Ressource erstellen und Tarif auswählen (empfohlen: Basis Tier)
+- **6.2** Innerhalb der AI Search:
+  - **6.2.1** "Importieren und Vektorisieren von Daten" klicken
+  - **6.2.2** Azure Blob Storage auswählen
+  - **6.2.3** Für YGO Karten:
+    - **6.2.3.1** Entsprechenden Storage Account und Blob Container auswählen
+    - **6.2.3.2** Analysemodus auf JSON setzen
+    - **6.2.3.3** Vektorisierende Spalte "SearchableText" auswählen
+    - **6.2.3.4** OpenAI Service aus Schritt 5 auswählen
+    - **6.2.3.5** Modellimplementierung "text-embedding-ada-002" auswählen
+  - **6.2.4** Für YGO Regelwerk:
+    - **6.2.4.1** Entsprechenden Storage Account und Blob Container auswählen
+    - **6.2.4.2** Analysemodus auf Default setzen
+    - **6.2.4.3** OpenAI Service aus Schritt 5 auswählen
+    - **6.2.4.4** Modellimplementierung "text-embedding-ada-002" auswählen
+
+## 7. Konfiguration abschließen
+- **7.** AI Search URL austauschen
+- **8.** AI Search Primary Key austauschen
+- **9.** AI Search Index Bezeichnungen austauschen
+- **10.** Azure OpenAI Endpoint austauschen
+- **11.** Azure OpenAI Keys austauschen
 
 
 
