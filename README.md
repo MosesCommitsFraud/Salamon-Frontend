@@ -36,13 +36,14 @@ Salamon dreht sich in erster Linie um dein **Autocomplete‑Deck**: Gib unvollst
 git clone https://github.com/<user>/salamon.git
 cd salamon
 
-# 2. Env‑Datei einfügen ins Root-Verzeichnis
-cp .env.example .env
+# 2. Installation von npm und Node.Js via vscode Extensions oder per manueller Installation
 
-# 3. Abhängigkeiten installieren (React 19 erfordert --force)
+# 3. Env‑Datei einfügen ins Root-Verzeichnis
+
+# 4. Abhängigkeiten installieren (React 19 erfordert --force)
 npm install --force
 
-# 4. Dev‑Server starten
+# 5. Dev‑Server starten
 npm run dev
 # öffne http://localhost:3000
 ```
